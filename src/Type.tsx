@@ -9,10 +9,9 @@ export type TypeProps = {
   shadowColors: string[];
   axes: Axis[];
   shadowStep: number;
-  maxDistance: number;
+  maxDistancePx: number;
   smoothing: number;
-  shadowMode: 'mouse' | 'fixed';
-  shadowAngle: number;
+  shadowAngle: number | null;
   springStiffness: number;
   springDamping: number;
 };
@@ -22,9 +21,8 @@ export const Type = ({
   shadowColors,
   axes,
   shadowStep,
-  maxDistance,
+  maxDistancePx,
   smoothing,
-  shadowMode,
   shadowAngle,
   springStiffness,
   springDamping,
@@ -35,9 +33,8 @@ export const Type = ({
     axes,
     shadowColors,
     shadowStep,
-    maxDistance,
+    maxDistancePx,
     smoothing,
-    shadowMode,
     shadowAngle,
     springStiffness,
     springDamping,

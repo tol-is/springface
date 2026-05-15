@@ -1,0 +1,212 @@
+.docs {
+  --docs-fg: #f0ede6;
+  --docs-muted: #8a877f;
+  --docs-dim: #5c5a55;
+  --docs-line: rgba(240, 237, 230, 0.08);
+  --docs-line-strong: rgba(240, 237, 230, 0.16);
+  --docs-chip-bg: rgba(240, 237, 230, 0.04);
+  --docs-chip-border: rgba(240, 237, 230, 0.1);
+  --docs-accent: #c9c9ff;
+  --docs-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+
+  width: min(72rem, 100%);
+  margin: 14vmax auto 0 0;
+  padding: 0 0;
+  color: var(--docs-fg);
+  font-family: var(--font-display);
+  font-variation-settings: "wdth" 100, "wght" 380;
+  letter-spacing: -0.005em;
+}
+
+.docs-header {
+  border-top: 1px solid var(--docs-line);
+  padding-top: 3rem;
+  margin-bottom: 4.5rem;
+  max-width: 44rem;
+}
+
+.docs-eyebrow {
+  font-family: var(--docs-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--docs-muted);
+  margin: 0 0 1.25rem;
+}
+
+.docs-title {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-variation-settings: "wdth" 90, "wght" 500;
+  line-height: 0.95;
+  letter-spacing: -0.01em;
+  margin: 0 0 1.25rem;
+}
+
+.docs-lede {
+  font-size: 1.05rem;
+  line-height: 1.55;
+  color: var(--docs-muted);
+  margin: 0;
+}
+
+.docs-lede code {
+  font-family: var(--docs-mono);
+  font-size: 0.92em;
+  color: var(--docs-fg);
+  background: var(--docs-chip-bg);
+  border: 1px solid var(--docs-chip-border);
+  border-radius: 4px;
+  padding: 0.05em 0.4em;
+}
+
+.docs-signature {
+  margin: 2rem 0 0;
+  padding: 1.4rem 1.5rem;
+  background: var(--docs-chip-bg);
+  border: 1px solid var(--docs-chip-border);
+  border-radius: 10px;
+  font-family: var(--docs-mono);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--docs-fg);
+  overflow-x: auto;
+  white-space: pre;
+  tab-size: 2;
+}
+
+.docs-signature code {
+  font-family: inherit;
+}
+
+.docs-group {
+  padding-top: 3rem;
+  border-top: 1px solid var(--docs-line);
+}
+
+.docs-group + .docs-group {
+  margin-top: 3rem;
+}
+
+.docs-group-head {
+  margin-bottom: 2.25rem;
+  max-width: 42rem;
+}
+
+.docs-group-title {
+  font-size: 2rem;
+  font-variation-settings: "wdth" 90, "wght" 500;
+  letter-spacing: -0.02em;
+  margin: 0 0 0.75rem;
+  color: var(--docs-fg);
+}
+
+.docs-group-blurb {
+  font-size: 1rem;
+  line-height: 1.55;
+  color: var(--docs-muted);
+  margin: 0;
+}
+
+.docs-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.docs-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 3rem;
+  align-items: flex-start;
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--docs-line);
+}
+
+.docs-row:last-child {
+  border-bottom: 1px solid var(--docs-line);
+}
+
+.docs-row-main {
+  min-width: 0;
+}
+
+.docs-row-name {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+  margin-bottom: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.docs-prop {
+  font-family: var(--docs-mono);
+  font-size: 1rem;
+  color: var(--docs-fg);
+  font-weight: 500;
+  letter-spacing: -0.005em;
+}
+
+.docs-type {
+  font-family: var(--docs-mono);
+  font-size: 0.78rem;
+  color: var(--docs-accent);
+  background: var(--docs-chip-bg);
+  border: 1px solid var(--docs-chip-border);
+  border-radius: 999px;
+  padding: 0.18rem 0.7rem;
+  white-space: nowrap;
+}
+
+.docs-desc {
+  font-size: 0.98rem;
+  line-height: 1.55;
+  color: var(--docs-muted);
+  margin: 0;
+  max-width: 38rem;
+}
+
+.docs-row-default {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+  flex-shrink: 0;
+  padding-top: 0.15rem;
+}
+
+.docs-default-label {
+  font-family: var(--docs-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--docs-dim);
+}
+
+.docs-default-value {
+  font-family: var(--docs-mono);
+  font-size: 0.92rem;
+  color: var(--docs-fg);
+  background: var(--docs-chip-bg);
+  border: 1px solid var(--docs-chip-border);
+  border-radius: 6px;
+  padding: 0.32rem 0.7rem;
+  min-width: 3.5rem;
+  text-align: center;
+}
+
+@media (max-width: 720px) {
+  .docs {
+    margin-top: 10vmax;
+  }
+
+  .docs-row {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .docs-row-default {
+    flex-direction: row;
+    align-items: center;
+    gap: 0.7rem;
+  }
+}
