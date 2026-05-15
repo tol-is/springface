@@ -1,0 +1,27 @@
+.type-root {
+  position: relative;
+  width: 100%;
+  isolation: isolate;
+}
+
+.type-heading {
+  font-family: var(--font-display);
+  color: var(--color-text);
+  text-transform: uppercase;
+  line-height: 0.84;
+  letter-spacing: -0.015em;
+  font-size: clamp(12vmax, 17vmax, 25rem);
+  margin: 0 0 0 0;
+  user-select: none;
+  contain: layout style;
+}
+
+.type-line {
+  display: block;
+  white-space: nowrap;
+  contain: layout style;
+}
+
+.type-letter {
+  display: inline-block;
+}

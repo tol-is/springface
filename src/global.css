@@ -1,0 +1,44 @@
+
+@font-face {
+  font-family: 'Averta';
+  src: url('@/fonts/AvertaPEVF.woff2') format('woff2');
+  font-variation-settings: "wdth" 50;
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --color-text: #F0EDE6;  
+  --color-bg: #02020A;
+  --font-display: 'Averta', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+body {
+  font-family: var(--font-display);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  font-variation-settings: "wdth" 100, "wght" 400;
+  padding: 2vmax;
+}
+
+a:not([class]) {
+  color: var(--color-gold);
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
