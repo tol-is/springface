@@ -67,8 +67,8 @@ export const useSpringface = (
         ? window.matchMedia(REDUCED_MOTION_QUERY)
         : null;
 
-    let rafId = 0;
     let cleanupAnimation: (() => void) | null = null;
+    let isVisible = false;
 
     const startAnimation = () => {
       const letters = Array.from(
@@ -96,6 +96,7 @@ export const useSpringface = (
       let mouseX = window.innerWidth / 2;
       let mouseY = window.innerHeight / 2;
       let lastTime = performance.now();
+      let rafId = 0;
 
       const onMove = (e: PointerEvent) => {
         mouseX = e.clientX;
@@ -194,17 +195,30 @@ export const useSpringface = (
     };
 
     const sync = () => {
-      cleanupAnimation?.();
-      cleanupAnimation = null;
-      if (!mql || !mql.matches) {
+      const motionAllowed = !mql || !mql.matches;
+      const shouldRun = motionAllowed && isVisible;
+      if (shouldRun && !cleanupAnimation) {
         cleanupAnimation = startAnimation();
+      } else if (!shouldRun && cleanupAnimation) {
+        cleanupAnimation();
+        cleanupAnimation = null;
       }
     };
 
-    sync();
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          isVisible = entry.isIntersecting;
+        }
+        sync();
+      },
+    );
+    observer.observe(root);
+
     mql?.addEventListener("change", sync);
 
     return () => {
+      observer.disconnect();
       mql?.removeEventListener("change", sync);
       cleanupAnimation?.();
     };

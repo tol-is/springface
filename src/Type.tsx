@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import "./Type.css";
-import { useSpringface, type Axis } from "./useSpringface";
+import { useSpringface, type Axis } from "./lib";
 
 export type { Axis };
 
