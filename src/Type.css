@@ -24,4 +24,17 @@
 
 .type-letter {
   display: inline-block;
+  position: relative;
+}
+
+.type-letter::before {
+  content: attr(data-letter);
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: transparent;
+  text-shadow: var(--text-shadow, none);
+  font-variation-settings: inherit;
+  pointer-events: none;
+  z-index: -1;
 }

@@ -1,6 +1,6 @@
 {
   "name": "use-springface",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "React hook that drives variable-font axes with pointer-proximity spring physics, plus a chromatic shadow stack.",
   "license": "ISC",
   "author": "tol-is",

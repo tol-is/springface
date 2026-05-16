@@ -60,7 +60,7 @@ export const Type = ({
               ) : (
                 <span
                   key={i}
-                  data-letter=""
+                  data-letter={ch}
                   aria-hidden="true"
                   className="type-letter"
                 >

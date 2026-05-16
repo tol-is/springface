@@ -167,12 +167,9 @@ export const useSpringface = (
             s.axisValues,
             axes,
           );
-          letters[i].style.textShadow = buildShadow(
-            s.ux,
-            s.uy,
-            s.mag,
-            shadowStep,
-            shadowColors,
+          letters[i].style.setProperty(
+            "--text-shadow",
+            buildShadow(s.ux, s.uy, s.mag, shadowStep, shadowColors),
           );
         }
 
